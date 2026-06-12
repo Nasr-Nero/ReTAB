@@ -1,0 +1,203 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #333;
+  text-align: justify;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+header {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* --- Styles globaux --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* --- . NAVIGATION HORIZONTALE (Header) --- */
+.main-header {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  display: flex;
+  justify-content: space-between; /* Aligne le logo à gauche et le menu à droite */
+  align-items: center;
+  padding: 0 30px;
+  height: 70px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-header .logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Alignement horizontal des liens */
+.nav-horizontal ul {
+    display: flex; /* Aligne les li les uns à côté des autres */
+    list-style: none;
+}
+
+.nav-horizontal a {
+    display: block;
+    color: #cbd5e0;
+    text-decoration: none;
+    padding: 24px 20px; /* Donne de la hauteur pour correspondre au header */
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Effets au survol et lien actif */
+.nav-horizontal a:hover, 
+.nav-horizontal a.active {
+    color: #ffffff;
+    border-bottom: 3px solid #3182ce; /* Ligne bleue sous le lien */
+}
+
+
+/* --- Structure pour la partie basse (Sidebar + Contenu) --- */
+.content-wrapper {
+    display: flex;
+    min-height: calc(100vh - 70px); /* Prend tout le reste de la hauteur de l'écran */
+}
+
+
+
+
+
+.carousel {
+  position: relative;
+  max-width: 600px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.slide p {
+  background: rgba(255, 152, 0, 0.8);
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+footer {
+  background: #ff9800;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.row {
+    display: flex;
+    align-items: center; /* Aligne le texte et les images verticalement au centre */
+    justify-content: space-between; /* Espace le bloc texte et le bloc image */
+    margin-bottom: 40px;
+    gap: 30px; /* Espace entre le bloc texte et le bloc image */
+}
+
+/* L'astuce pour inverser l'ordre (vice versa) */
+.row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Colonne du texte (prend 50% de la largeur moins l'espace du gap) */
+.text-col {
+    flex: 1;
+}
+
+/* Colonne des images (prend 50% de la largeur et gère les images côte à côte) */
+.image-col {
+    flex: 1;
+    display: flex;
+    gap: 10px; /* Espace entre les images si tu en mets plusieurs */
+    justify-content: center;
+}
+
+/* Gestion des images pour qu'elles restent fluides et à la même hauteur */
+.image-col img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    flex: 1; /* Permet aux images de se partager équitablement l'espace si plusieurs */
+}
+
+/* --- Optionnel : Rendre le tout responsive sur mobile --- */
+@media (max-width: 768px) {
+    .row, .row.reverse {
+        flex-direction: column; /* Aligne le texte et l'image l'un sous l'autre sur petit écran */
+    }
+    
+    .image-col {
+        flex-direction: column; /* Les images s'empilent aussi sur mobile si besoin */
+    }
+}
+/* --- Rendre le tout responsive --- */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* La sidebar passe au-dessus du contenu sur mobile */
+    }
+}
+
+ 
