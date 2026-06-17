@@ -674,10 +674,10 @@
           <h4>Rejoindre le Réseau</h4>
           <p>Inscrivez-vous à nos actualités pour suivre la production et les opportunités d'exportation.</p>
           <form class="newsletter-form" id="newsletterForm">
-            <input type="email" placeholder="Votre adresse email" required aria-label="Email de contact">
-            <button type="submit">S'inscrire</button>
+            <input type="email" id="newsletterEmail" placeholder="Votre adresse email" required aria-label="Email de contact">
+            <button type="submit" id="newsletterBtn">S'inscrire</button>
           </form>
-          <p class="mono-data" id="newsletterFeedback" style="font-size: 12px; color: var(--accent); display: none;">
+          <p class="mono-data" id="newsletterFeedback" style="font-size: 13px; font-weight: 600; margin-top: 8px; display: none; line-height: 1.4;">
           </p>
         </div>
 
@@ -698,6 +698,57 @@
 
   <!-- Script Import -->
   <script src="script.js"></script>
+
+  <!-- Script pour la Newsletter avec Web3Forms -->
+  <script>
+    document.getElementById('newsletterForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const emailInput = document.getElementById('newsletterEmail');
+      const email = emailInput.value.trim();
+      const btn = document.getElementById('newsletterBtn');
+      const feedback = document.getElementById('newsletterFeedback');
+      
+      if (!email) return;
+
+      // Loading state
+      btn.disabled = true;
+      btn.textContent = 'Envoi...';
+      feedback.style.display = 'none';
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: '903e304c-72f6-47ca-9ec4-9ea1552f4fe0',
+            subject: '🍍 Nouvel inscrit à la Newsletter Bravo Jaram',
+            from_name: 'Site ReTAB',
+            'Email de l\'abonné': email,
+            botcheck: ''
+          })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          emailInput.value = '';
+          feedback.style.color = '#a3e635'; // Vert succès
+          feedback.textContent = '🎉 Succès ! Vous avez bien rejoint le réseau.';
+        } else {
+          throw new Error(data.message || 'Erreur inconnue');
+        }
+      } catch (err) {
+        feedback.style.color = '#f87171'; // Rouge erreur
+        feedback.textContent = '❌ Une erreur est survenue, veuillez réessayer.';
+      }
+
+      // Reset
+      feedback.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'S\'inscrire';
+    });
+  </script>
 </body>
 
 </html>

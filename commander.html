@@ -719,9 +719,18 @@
       const nationalite = document.getElementById('nationalite').value;
       const actionEl    = document.querySelector('input[name="action"]:checked');
 
-      // Validation
+      // Validation basique
       if (!nom || !whatsapp || !sexeEl || !nationalite || !actionEl) {
         showFormError('⚠️ Veuillez remplir tous les champs obligatoires.');
+        shakeForm();
+        return;
+      }
+
+      // Validation stricte Numéro WhatsApp
+      // Autorise le '+', les chiffres, les espaces, et entre 8 et 20 caractères
+      const whatsappRegex = /^\+?[0-9\s]{8,20}$/;
+      if (!whatsappRegex.test(whatsapp)) {
+        showFormError('⚠️ Numéro WhatsApp invalide. Veuillez n\'utiliser que des chiffres (ex: +229 97 00 00 00).');
         shakeForm();
         return;
       }
