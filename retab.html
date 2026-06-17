@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ReTAB | Le Goût de la Fraîcheur & Excellence Agroalimentaire au Bénin</title>
-  <meta name="description" content="Site officiel de ReTAB (Réseau des Transformateurs d'Ananas du Bénin). Découvrez notre gamme de jus de fruits Bravo Jaram 100% naturels : Ananas, Pastèque, Gingembre.">
+  <meta name="description"
+    content="Site officiel de ReTAB (Réseau des Transformateurs d'Ananas du Bénin). Découvrez notre gamme de jus de fruits Bravo Jaram 100% naturels : Ananas, Pastèque, Gingembre.">
   <link rel="stylesheet" href="retab.css">
 </head>
+
 <body>
 
   <!-- =========================================
@@ -14,16 +17,12 @@
        ========================================= -->
   <header class="header-wrapper" id="mainHeader">
     <div class="container main-header">
-      
+
       <!-- Brand Logo -->
       <a href="#" class="logo-wrapper" id="logoLink">
         <!-- Logo image : on montre uniquement la partie icone (engrenage+ananas) -->
         <div class="logo-img-crop">
-          <img
-            src="WhatsApp Image 2026-06-04 at 10.16.24.jpeg"
-            alt="Logo ReTAB"
-            class="logo-img-real"
-          />
+          <img src="WhatsApp Image 2026-06-04 at 10.16.24.jpeg" alt="Logo ReTAB" class="logo-img-real" />
         </div>
         <div class="logo-text">
           <span>ReTAB</span>
@@ -46,8 +45,8 @@
 
       <!-- Action Button -->
       <div style="display: flex; align-items: center; gap: 16px;">
-        <a href="https://tally.so/r/KYkkDM" target="_blank" rel="noopener" class="btn btn-primary" id="ctaHeader">Commander</a>
-        
+        <a href="commander.html" class="btn btn-primary" id="ctaHeader">Commander</a>
+
         <!-- Mobile Menu Trigger -->
         <button class="burger-menu" id="mobileMenuTrigger" aria-label="Ouvrir le menu">
           <span></span>
@@ -67,11 +66,8 @@
 
       <!-- Background Image Layer -->
       <div class="hero-bg">
-        <img
-          src="pineapple_field_workers.png"
-          alt="Champs d'ananas avec des cultivateurs au Bénin"
-          class="hero-bg-img"
-        />
+        <img src="pineapple_field_workers.png" alt="Champs d'ananas avec des cultivateurs au Bénin"
+          class="hero-bg-img" />
         <!-- Gradient overlays for readability -->
         <div class="hero-overlay-left"></div>
         <div class="hero-overlay-right"></div>
@@ -81,162 +77,90 @@
       <!-- Hero Inner Layout -->
       <div class="hero-inner">
 
-        <!-- ── LEFT COLUMN : Floating data cards ── -->
-        <div class="hero-left">
-
-          <!-- Location breadcrumb -->
-          <div class="hero-location">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Zè, Gonfandji, Bénin</span>
+        <!-- ── HERO CONTENT : Centré ── -->
+        <div class="hero-right">
+          <div class="hero-badge-pill">BIENVENUE AU ReTAB</div>
+          <h1 class="hero-headline">
+            La Pureté de l'Ananas <span class="hero-headline-accent" style="color:#F97316;">Béninois.</span>
+          </h1>
+          <p class="hero-sub">Des jus 100% naturels pressés à froid par le Réseau des Transformateurs d'Ananas du Bénin.
+            Sans eau, sans sucre ajouté, sans compromis.</p>
+          <div class="hero-ctas">
+            <a href="#jus" class="hero-cta-primary">
+              Explorer nos Jus
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </a>
+            <a href="commander.html" class="hero-cta-secondary">
+              Commander
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </a>
           </div>
 
-          <!-- Card 1 : Production Stats -->
-          <div class="hero-float-card hero-float-card--stats" id="heroCardStats">
-            <div class="hfc-header">
-              <div class="hfc-loc">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Zè, Bénin
-              </div>
-              <!-- Pineapple icon -->
-              <div class="hfc-fruit-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C16.9706 22 21 17.9706 21 13C21 8.02944 12 2 12 2C12 2 3 8.02944 3 13C3 17.9706 7.02944 22 12 22Z"/><path d="M12 6V18"/><path d="M8 10c0 0 2 2 4 2s4-2 4-2"/></svg>
-              </div>
-            </div>
-
-            <div class="hfc-temp-row">
-              <div class="hfc-temp-main">
-                <span class="hfc-temp-sign">+</span>
-                <span class="hfc-temp-value">12</span>
-                <span class="hfc-temp-unit">°Brix</span>
-              </div>
-              <div class="hfc-temp-detail">
-                <span>H : <strong>72.4°C</strong></span>
-                <span>L : &nbsp;<strong>4°C</strong></span>
-              </div>
-            </div>
-
-            <div class="hfc-metrics">
-              <div class="hfc-metric">
-                <span class="hfc-m-label">Pureté</span>
-                <span class="hfc-m-val">100%</span>
-              </div>
-              <div class="hfc-metric">
-                <span class="hfc-m-label">Production</span>
-                <span class="hfc-m-val">24k</span>
-              </div>
-              <div class="hfc-metric">
-                <span class="hfc-m-label">Membres</span>
-                <span class="hfc-m-val">35</span>
-              </div>
-              <div class="hfc-metric">
-                <span class="hfc-m-label">Conserv.</span>
-                <span class="hfc-m-val">0 ajout</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2 : Growth Chart -->
-          <div class="hero-float-card hero-float-card--chart" id="heroCardChart">
-            <div class="hfc-chart-header">
-              <div>
-                <div class="hfc-chart-label">Taux de production</div>
-                <div class="hfc-chart-value">+18% <span class="hfc-chart-arrow">↑</span></div>
-              </div>
-              <div class="hfc-chart-period">
-                <button class="hfc-period active">S</button>
-                <button class="hfc-period">M</button>
-                <button class="hfc-period">A</button>
-              </div>
-            </div>
-            <div class="hfc-bars">
-              <div class="hfc-bar" style="--h:38%"><span class="hfc-bar-tip"></span></div>
-              <div class="hfc-bar" style="--h:55%"><span class="hfc-bar-tip"></span></div>
-              <div class="hfc-bar" style="--h:42%"><span class="hfc-bar-tip"></span></div>
-              <div class="hfc-bar" style="--h:70%"><span class="hfc-bar-tip"></span></div>
-              <div class="hfc-bar" style="--h:62%"><span class="hfc-bar-tip"></span></div>
-              <div class="hfc-bar hfc-bar--accent" style="--h:88%"><span class="hfc-bar-tip"></span></div>
-              <div class="hfc-bar hfc-bar--accent" style="--h:95%"><span class="hfc-bar-tip"></span></div>
-              <div class="hfc-bar hfc-bar--accent" style="--h:80%"><span class="hfc-bar-tip"></span></div>
-              <div class="hfc-bar hfc-bar--accent" style="--h:100%"><span class="hfc-bar-tip"></span></div>
-              <div class="hfc-bar hfc-bar--accent" style="--h:92%"><span class="hfc-bar-tip"></span></div>
-              <div class="hfc-bar hfc-bar--accent" style="--h:85%"><span class="hfc-bar-tip"></span></div>
-              <div class="hfc-bar hfc-bar--accent" style="--h:98%"><span class="hfc-bar-tip"></span></div>
-            </div>
-            <div class="hfc-chart-footer">
-              <span>Janvier 2026</span>
-              <span>Juillet 2026</span>
-            </div>
-          </div>
-
-          <!-- Social Proof -->
+          <!-- Social Proof centré -->
           <div class="hero-social-proof">
             <div class="hero-avatars">
-              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=60&q=80" alt="Membre" class="hero-avatar" />
-              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=60&q=80" alt="Membre" class="hero-avatar" />
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80" alt="Membre" class="hero-avatar" />
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80" alt="Membre" class="hero-avatar" />
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=60&q=80"
+                alt="Membre" class="hero-avatar" />
+              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=60&q=80"
+                alt="Membre" class="hero-avatar" />
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80"
+                alt="Membre" class="hero-avatar" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80"
+                alt="Membre" class="hero-avatar" />
             </div>
             <div class="hero-sp-text">
               <strong>35+ Membres GIE</strong>
               <span>Rejoignez la coopérative</span>
             </div>
           </div>
-
-        </div>
-
-        <!-- ── RIGHT COLUMN : Headline + CTAs ── -->
-        <div class="hero-right">
-          <div class="hero-badge-pill">BIENVENUE AU ReTAB</div>
-          <h1 class="hero-headline">
-            La Pureté<br>
-            de l'Ananas<br>
-            <span class="hero-headline-accent">Béninois.</span>
-          </h1>
-          <p class="hero-sub">Des jus 100% naturels pressés à froid par le Réseau des Transformateurs d'Ananas du Bénin. Sans eau, sans sucre ajouté, sans compromis.</p>
-          <div class="hero-ctas">
-            <a href="#jus" class="hero-cta-primary">
-              Explorer nos Jus
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </a>
-            <a href="https://tally.so/r/KYkkDM" target="_blank" rel="noopener" class="hero-cta-secondary">
-              Commander
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </a>
-          </div>
         </div>
 
       </div>
     </section>
+
 
     <!-- =========================================
          MISSION & VALUES SECTION
          ========================================= -->
     <section id="histoire">
       <div class="container">
-        
+
         <div class="mission-intro">
           <div class="badge">Origine & Valeurs</div>
           <h2>Le Réseau des Transformateurs d’Ananas du Bénin</h2>
-          <p>"Né le 22 avril 2021 à Zè (Gonfandji), le ReTAB structure la filière agro-industrielle sous forme de GIE pour offrir le meilleur des jus tropicaux aux marchés locaux et internationaux tout en soutenant l'économie locale."</p>
+          <p>"Né le 22 avril 2021 à Zè (Gonfandji), le ReTAB structure la filière agro-industrielle sous forme de GIE
+            pour offrir le meilleur des jus tropicaux aux marchés locaux et internationaux tout en soutenant l'économie
+            locale."</p>
         </div>
 
         <div class="mission-grid">
-          
+
           <!-- Card 1 -->
           <div class="mission-card">
             <div class="mission-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
               </svg>
             </div>
             <h3>100% Pur Fruit</h3>
-            <p>Chaque bouteille contient uniquement le nectar extrait de nos fruits sélectionnés à maturité. Zéro eau ajoutée, zéro édulcorant, zéro colorant.</p>
+            <p>Chaque bouteille contient uniquement le nectar extrait de nos fruits sélectionnés à maturité. Zéro eau
+              ajoutée, zéro édulcorant, zéro colorant.</p>
           </div>
 
           <!-- Card 2 -->
           <div class="mission-card">
             <div class="mission-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -244,19 +168,22 @@
               </svg>
             </div>
             <h3>Coopérative Équitable</h3>
-            <p>Notre GIE rassemble 35 transformateurs et producteurs du Bénin. Travailler en collectif garantit un prix juste et des investissements locaux.</p>
+            <p>Notre GIE rassemble 35 transformateurs et producteurs du Bénin. Travailler en collectif garantit un prix
+              juste et des investissements locaux.</p>
           </div>
 
           <!-- Card 3 -->
           <div class="mission-card">
             <div class="mission-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                 <polyline points="22 4 12 14.01 9 11.01" />
               </svg>
             </div>
             <h3>Qualité & Sécurité</h3>
-            <p>Enregistré à l'APIEX et régi par l'Acte Uniforme OHADA, notre processus assure une pasteurisation douce préservant vitamines et nutriments.</p>
+            <p>Enregistré à l'APIEX et régi par l'Acte Uniforme OHADA, notre processus assure une pasteurisation douce
+              préservant vitamines et nutriments.</p>
           </div>
 
         </div>
@@ -269,7 +196,7 @@
          ========================================= -->
     <section class="products-section" id="jus">
       <div class="container">
-        
+
         <div class="section-header">
           <div class="section-title-wrapper">
             <div class="badge">Gamme Bravo Jaram</div>
@@ -281,23 +208,26 @@
         </div>
 
         <div class="products-grid">
-          
+
           <!-- Product 1: Ananas Simple -->
           <div class="product-card">
             <div class="product-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?auto=format&fit=crop&q=80&w=600" alt="Jus d'Ananas Pur" class="product-img">
+              <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?auto=format&fit=crop&q=80&w=600"
+                alt="Jus d'Ananas Pur" class="product-img">
               <span class="product-tag">Le Classique</span>
             </div>
             <div class="product-info">
               <h3>Jus d'Ananas Pain de Sucre</h3>
-              <p>La douceur incomparable du célèbre ananas "Pain de Sucre" du Bénin. Un goût naturellement miellé et désaltérant.</p>
+              <p>La douceur incomparable du célèbre ananas "Pain de Sucre" du Bénin. Un goût naturellement miellé et
+                désaltérant.</p>
               <div class="product-ingredients">
                 <span class="ingredient-badge">Ananas Pain de Sucre</span>
                 <span class="ingredient-badge">100% Pur Jus</span>
               </div>
               <div class="product-footer">
                 <span class="product-price">1 000 FCFA</span>
-                <a href="https://tally.so/r/KYkkDM" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 8px 16px; font-size: 13px;">Commander</a>
+                <a href="https://tally.so/r/KYkkDM" target="_blank" rel="noopener" class="btn btn-outline"
+                  style="padding: 8px 16px; font-size: 13px;">Commander</a>
               </div>
             </div>
           </div>
@@ -305,12 +235,14 @@
           <!-- Product 2: Ananas Pastèque -->
           <div class="product-card">
             <div class="product-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&q=80&w=600" alt="Jus d'Ananas Pastèque" class="product-img">
+              <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&q=80&w=600"
+                alt="Jus d'Ananas Pastèque" class="product-img">
               <span class="product-tag">Le Frais</span>
             </div>
             <div class="product-info">
               <h3>Cocktail Ananas-Pastèque</h3>
-              <p>L'union désaltérante de l'ananas charnu et de la pastèque gorgée de soleil. Une vague de fraîcheur immédiate pour le corps.</p>
+              <p>L'union désaltérante de l'ananas charnu et de la pastèque gorgée de soleil. Une vague de fraîcheur
+                immédiate pour le corps.</p>
               <div class="product-ingredients">
                 <span class="ingredient-badge">Ananas</span>
                 <span class="ingredient-badge">Pastèque Rouge</span>
@@ -318,7 +250,8 @@
               </div>
               <div class="product-footer">
                 <span class="product-price">1 200 FCFA</span>
-                <a href="https://tally.so/r/KYkkDM" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 8px 16px; font-size: 13px;">Commander</a>
+                <a href="https://tally.so/r/KYkkDM" target="_blank" rel="noopener" class="btn btn-outline"
+                  style="padding: 8px 16px; font-size: 13px;">Commander</a>
               </div>
             </div>
           </div>
@@ -326,12 +259,14 @@
           <!-- Product 3: Ananas Gingembre -->
           <div class="product-card">
             <div class="product-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&q=80&w=600" alt="Jus d'Ananas Gingembre" class="product-img">
+              <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&q=80&w=600"
+                alt="Jus d'Ananas Gingembre" class="product-img">
               <span class="product-tag">L'Énergisant</span>
             </div>
             <div class="product-info">
               <h3>Cocktail Ananas-Gingembre</h3>
-              <p>Un mariage audacieux entre la rondeur de l'ananas et le piquant stimulant du gingembre local. Idéal pour faire le plein de tonus.</p>
+              <p>Un mariage audacieux entre la rondeur de l'ananas et le piquant stimulant du gingembre local. Idéal
+                pour faire le plein de tonus.</p>
               <div class="product-ingredients">
                 <span class="ingredient-badge">Ananas</span>
                 <span class="ingredient-badge">Gingembre Bio</span>
@@ -339,7 +274,8 @@
               </div>
               <div class="product-footer">
                 <span class="product-price">1 200 FCFA</span>
-                <a href="https://tally.so/r/KYkkDM" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 8px 16px; font-size: 13px;">Commander</a>
+                <a href="https://tally.so/r/KYkkDM" target="_blank" rel="noopener" class="btn btn-outline"
+                  style="padding: 8px 16px; font-size: 13px;">Commander</a>
               </div>
             </div>
           </div>
@@ -354,13 +290,14 @@
          ========================================= -->
     <section id="processus">
       <div class="container">
-        
+
         <div class="process-wrapper">
-          
+
           <!-- Dark Left Card: Technical Steps -->
           <div class="process-card-dark">
             <div>
-              <div class="badge" style="background: rgba(6, 182, 212, 0.15); color: var(--accent);">Notre Savoir-faire</div>
+              <div class="badge" style="background: rgba(6, 182, 212, 0.15); color: var(--accent);">Notre Savoir-faire
+              </div>
               <h3 style="margin-top: 16px;">Les 4 étapes de notre charte qualité</h3>
             </div>
 
@@ -368,7 +305,8 @@
               <div class="step-num">01</div>
               <div class="step-content">
                 <h4>Sélection & Épluchage</h4>
-                <p>Lavage à grande eau et brossage des fruits. Épluchage manuel méticuleux pour ne garder que le cœur juteux.</p>
+                <p>Lavage à grande eau et brossage des fruits. Épluchage manuel méticuleux pour ne garder que le cœur
+                  juteux.</p>
               </div>
             </div>
 
@@ -376,7 +314,8 @@
               <div class="step-num">02</div>
               <div class="step-content">
                 <h4>Extraction Douce</h4>
-                <p>Pressage mécanique lent pour extraire le pur jus sans l'échauffer, conservant ainsi tous les nutriments actifs.</p>
+                <p>Pressage mécanique lent pour extraire le pur jus sans l'échauffer, conservant ainsi tous les
+                  nutriments actifs.</p>
               </div>
             </div>
 
@@ -384,7 +323,8 @@
               <div class="step-num">03</div>
               <div class="step-content">
                 <h4>Pasteurisation Douce</h4>
-                <p>Chauffage thermique contrôlé à 72°C durant un court instant pour éliminer les germes sans détruire la saveur.</p>
+                <p>Chauffage thermique contrôlé à 72°C durant un court instant pour éliminer les germes sans détruire la
+                  saveur.</p>
               </div>
             </div>
 
@@ -392,14 +332,15 @@
               <div class="step-num">04</div>
               <div class="step-content">
                 <h4>Conditionnement</h4>
-                <p>Remplissage immédiat à chaud dans des bouteilles en verre stérile avec capsule hermétique sous vide.</p>
+                <p>Remplissage immédiat à chaud dans des bouteilles en verre stérile avec capsule hermétique sous vide.
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Right Grid: General Coop Stats -->
           <div class="process-stats-grid">
-            
+
             <div class="stats-card-lite">
               <div class="num" id="statFruit">100%</div>
               <div class="label">Jus Pur Fruit</div>
@@ -436,39 +377,54 @@
           <div class="delivery-content">
             <div class="badge">Logistique</div>
             <h2>Livraison Rapide et Fiable</h2>
-            <p>Notre réseau logistique couvre l'ensemble du territoire béninois. Nous expédions nos bouteilles dans des caisses sécurisées pour préserver l'intégrité du produit jusqu'à votre table.</p>
+            <p>Notre réseau logistique couvre l'ensemble du territoire béninois. Nous expédions nos bouteilles dans des
+              caisses sécurisées pour préserver l'intégrité du produit jusqu'à votre table.</p>
             <ul class="delivery-features">
               <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"
+                  stroke-linecap="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
                 <span>Livraison express à Cotonou et environs</span>
               </li>
               <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"
+                  stroke-linecap="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
                 <span>Expédition régionale et sous-régionale possible</span>
               </li>
               <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"
+                  stroke-linecap="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
                 <span>Conditionnement anti-choc sécurisé</span>
               </li>
             </ul>
-            <a href="https://tally.so/r/KYkkDM" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 16px;">Vérifier mon éligibilité</a>
+            <a href="https://tally.so/r/KYkkDM" target="_blank" rel="noopener" class="btn btn-primary"
+              style="margin-top: 16px;">Vérifier mon éligibilité</a>
           </div>
           <div class="delivery-image-wrapper">
-             <div class="glow-bg"></div>
-             <!-- Utilisation d'une image logistique élégante -->
-             <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7f?auto=format&fit=crop&q=80&w=800" alt="Logistique de livraison" class="delivery-img">
-             
-             <!-- Floating Delivery Status Card -->
-             <div class="floating-delivery-card">
-                <div class="delivery-status-header">
-                  <div class="pulse-green"></div>
-                  <span>En transit</span>
-                </div>
-                <div class="delivery-status-body">
-                  <strong>Colis ReTAB #0045</strong>
-                  <span>Destination: Cotonou</span>
-                </div>
-             </div>
+            <div class="glow-bg"></div>
+            <!-- Utilisation d'une image logistique élégante -->
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7f?auto=format&fit=crop&q=80&w=800"
+              alt="Logistique de livraison" class="delivery-img">
+
+            <!-- Floating Delivery Status Card -->
+            <div class="floating-delivery-card">
+              <div class="delivery-status-header">
+                <div class="pulse-green"></div>
+                <span>En transit</span>
+              </div>
+              <div class="delivery-status-body">
+                <strong>Colis ReTAB #0045</strong>
+                <span>Destination: Cotonou</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -479,7 +435,7 @@
          ========================================= -->
     <section class="testimonials-section" id="temoignages">
       <div class="container">
-        
+
         <div class="mission-intro">
           <div class="badge">Avis Clients</div>
           <h2>Ce qu'ils disent de Bravo Jaram</h2>
@@ -487,12 +443,14 @@
         </div>
 
         <div class="testimonials-grid">
-          
+
           <div class="testimonial-card">
             <div class="quote-icon">"</div>
-            <p class="testimonial-text">Le jus d'ananas le plus pur que j'ai goûté. On sent vraiment qu'il n'y a aucun ajout de sucre. Une qualité exceptionnelle et rafraîchissante.</p>
+            <p class="testimonial-text">Le jus d'ananas le plus pur que j'ai goûté. On sent vraiment qu'il n'y a aucun
+              ajout de sucre. Une qualité exceptionnelle et rafraîchissante.</p>
             <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100" alt="Client" class="author-img">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100"
+                alt="Client" class="author-img">
               <div class="author-info">
                 <strong>Marc K.</strong>
                 <span>Restaurateur</span>
@@ -502,9 +460,11 @@
 
           <div class="testimonial-card">
             <div class="quote-icon">"</div>
-            <p class="testimonial-text">Le cocktail Ananas-Gingembre est devenu mon indispensable du matin. Une véritable dose d'énergie naturelle pour commencer la journée !</p>
+            <p class="testimonial-text">Le cocktail Ananas-Gingembre est devenu mon indispensable du matin. Une
+              véritable dose d'énergie naturelle pour commencer la journée !</p>
             <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" alt="Client" class="author-img">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100"
+                alt="Client" class="author-img">
               <div class="author-info">
                 <strong>Amina S.</strong>
                 <span>Entrepreneure</span>
@@ -514,9 +474,11 @@
 
           <div class="testimonial-card">
             <div class="quote-icon">"</div>
-            <p class="testimonial-text">Soutenir une coopérative locale tout en consommant un produit de cette qualité, c'est le combo parfait. Félicitations à toute l'équipe.</p>
+            <p class="testimonial-text">Soutenir une coopérative locale tout en consommant un produit de cette qualité,
+              c'est le combo parfait. Félicitations à toute l'équipe.</p>
             <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Client" class="author-img">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100"
+                alt="Client" class="author-img">
               <div class="author-info">
                 <strong>David L.</strong>
                 <span>Client régulier</span>
@@ -534,7 +496,7 @@
          ========================================= -->
     <section class="faq-section" id="faq">
       <div class="container">
-        
+
         <div class="mission-intro">
           <div class="badge">Organisation & Questions</div>
           <h2>Tout savoir sur le ReTAB</h2>
@@ -542,18 +504,25 @@
         </div>
 
         <div class="faq-container">
-          
+
           <!-- Accordion Item 1 -->
           <div class="faq-item">
             <button class="faq-trigger">
               <h4>Qui dirige le GIE ReTAB ?</h4>
               <div class="faq-icon-box">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
               </div>
             </button>
             <div class="faq-content">
               <div class="faq-content-inner">
-                <p>Le ReTAB est administré selon des règles précises définies par l'Acte Uniforme OHADA. L'administration générale est assurée par <strong>Rigobert HOUESSA</strong>. La gestion financière et le contrôle interne sont supervisés par <strong>AHOUANGAN Colette</strong>, contrôleur de gestion. L'Assemblée Générale (AG) regroupe 35 membres actifs de la filière.</p>
+                <p>Le ReTAB est administré selon des règles précises définies par l'Acte Uniforme OHADA.
+                  L'administration générale est assurée par <strong>Rigobert HOUESSA</strong>. La gestion financière et
+                  le contrôle interne sont supervisés par <strong>AHOUANGAN Colette</strong>, contrôleur de gestion.
+                  L'Assemblée Générale (AG) regroupe 35 membres actifs de la filière.</p>
               </div>
             </div>
           </div>
@@ -563,12 +532,20 @@
             <button class="faq-trigger">
               <h4>Quelle est l'organisation interne du Bureau Exécutif ?</h4>
               <div class="faq-icon-box">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
               </div>
             </button>
             <div class="faq-content">
               <div class="faq-content-inner">
-                <p>Le Bureau Exécutif (B.E) coordonne les actions opérationnelles quotidiennes validées par l'Assemblée Générale. Il s'appuie sur le Secrétaire Général (SG), le Trésorier Général (TG) et son Adjoint pour les flux comptables, ainsi que sur des postes clés comme le <strong>Responsable Qualité</strong> et le <strong>Responsable Communication</strong> pour veiller aux normes sanitaires et à la visibilité de la marque.</p>
+                <p>Le Bureau Exécutif (B.E) coordonne les actions opérationnelles quotidiennes validées par l'Assemblée
+                  Générale. Il s'appuie sur le Secrétaire Général (SG), le Trésorier Général (TG) et son Adjoint pour
+                  les flux comptables, ainsi que sur des postes clés comme le <strong>Responsable Qualité</strong> et le
+                  <strong>Responsable Communication</strong> pour veiller aux normes sanitaires et à la visibilité de la
+                  marque.</p>
               </div>
             </div>
           </div>
@@ -578,12 +555,19 @@
             <button class="faq-trigger">
               <h4>Où est basé le ReTAB et où livrez-vous ?</h4>
               <div class="faq-icon-box">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
               </div>
             </button>
             <div class="faq-content">
               <div class="faq-content-inner">
-                <p>Le siège social officiel du ReTAB est établi au Bénin, plus précisément à <strong>Zè, Gonfandji</strong> (au domicile de M. Cyrille Tokponnon, l'un des membres fondateurs avec Mme Gloria Djidonou). Nous disposons d'un réseau logistique capable de livrer l'ensemble du territoire béninois, et nous exportons également nos jus vers la sous-région et l'international.</p>
+                <p>Le siège social officiel du ReTAB est établi au Bénin, plus précisément à <strong>Zè,
+                    Gonfandji</strong> (au domicile de M. Cyrille Tokponnon, l'un des membres fondateurs avec Mme Gloria
+                  Djidonou). Nous disposons d'un réseau logistique capable de livrer l'ensemble du territoire béninois,
+                  et nous exportons également nos jus vers la sous-région et l'international.</p>
               </div>
             </div>
           </div>
@@ -593,12 +577,18 @@
             <button class="faq-trigger">
               <h4>Vos jus contiennent-ils du sucre ou de l'eau ?</h4>
               <div class="faq-icon-box">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                  stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
               </div>
             </button>
             <div class="faq-content">
               <div class="faq-content-inner">
-                <p>Absolument pas. Les jus de la marque Bravo Jaram sont exempts d'eau ajoutée et de sucre cristallisé. La sucrosité provient uniquement du fructose naturel contenu dans l'ananas Pain de Sucre récolté à pleine maturité.</p>
+                <p>Absolument pas. Les jus de la marque Bravo Jaram sont exempts d'eau ajoutée et de sucre cristallisé.
+                  La sucrosité provient uniquement du fructose naturel contenu dans l'ananas Pain de Sucre récolté à
+                  pleine maturité.</p>
               </div>
             </div>
           </div>
@@ -614,20 +604,16 @@
        ========================================= -->
   <footer class="main-footer" id="contact">
     <div class="container">
-      
+
       <!-- Footer Columns -->
       <div class="footer-top">
-        
+
         <!-- About Column -->
         <div class="footer-col-about">
           <!-- Logo footer avec vrai image -->
           <a href="#" class="logo-wrapper logo-wrapper--footer">
             <div class="logo-img-crop logo-img-crop--footer">
-              <img
-                src="WhatsApp Image 2026-06-04 at 10.16.24.jpeg"
-                alt="Logo ReTAB"
-                class="logo-img-real"
-              />
+              <img src="WhatsApp Image 2026-06-04 at 10.16.24.jpeg" alt="Logo ReTAB" class="logo-img-real" />
             </div>
             <div class="logo-text">
               <span style="color:white;">ReTAB</span>
@@ -637,13 +623,26 @@
           <p>Groupement d'Intérêt Économique enregistré sous le numéro Folio 27, case 2079-14 à l'APIEX.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="Facebook">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
             </a>
             <a href="#" class="social-link" aria-label="Instagram">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
             </a>
             <a href="#" class="social-link" aria-label="LinkedIn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
             </a>
           </div>
         </div>
@@ -678,7 +677,8 @@
             <input type="email" placeholder="Votre adresse email" required aria-label="Email de contact">
             <button type="submit">S'inscrire</button>
           </form>
-          <p class="mono-data" id="newsletterFeedback" style="font-size: 12px; color: var(--accent); display: none;"></p>
+          <p class="mono-data" id="newsletterFeedback" style="font-size: 12px; color: var(--accent); display: none;">
+          </p>
         </div>
 
       </div>
@@ -699,4 +699,5 @@
   <!-- Script Import -->
   <script src="script.js"></script>
 </body>
+
 </html>
