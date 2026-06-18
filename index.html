@@ -407,19 +407,48 @@
                 <div class="map-pattern"></div>
                 
                 <svg class="route-svg" viewBox="0 0 200 100" preserveAspectRatio="none">
-                  <path class="route-path" d="M 30,75 Q 100,20 170,45" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="6,6" />
-                  <circle cx="30" cy="75" r="5" fill="var(--primary)" />
-                  <circle cx="170" cy="45" r="5" fill="#10b981" />
+                  <!-- Secondary Routes (Faded) -->
+                  <path class="route-path-secondary" d="M 40,60 Q 60,40 90,25" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.4" />
+                  <path class="route-path-secondary" d="M 90,25 Q 110,15 130,10" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.4" />
+                  <path class="route-path-secondary" d="M 40,60 Q 25,65 15,70" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.4" />
+                  <path class="route-path-secondary" d="M 40,60 Q 100,80 170,80" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.4" />
+
+                  <!-- Main Active Route to Cotonou -->
+                  <path class="route-path" d="M 40,60 Q 90,40 140,50" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="6,6" />
+                  
+                  <!-- City Dots -->
+                  <circle cx="40" cy="60" r="5" fill="var(--primary)" /> <!-- Zè -->
+                  <circle cx="90" cy="25" r="3" fill="var(--text-muted)" /> <!-- Parakou -->
+                  <circle cx="130" cy="10" r="3" fill="var(--text-muted)" /> <!-- Niamey -->
+                  <circle cx="15" cy="70" r="3" fill="var(--text-muted)" /> <!-- Lomé -->
+                  <circle cx="170" cy="80" r="3" fill="var(--text-muted)" /> <!-- Lagos -->
+                  <circle cx="140" cy="50" r="5" fill="#10b981" /> <!-- Cotonou -->
                 </svg>
 
-                <div class="pin pin-start">
-                  <span class="pin-label">Zè (Site de Production)</span>
+                <!-- City Pins & Labels -->
+                <div class="pin pin-start" style="top: 55%; left: 20%;">
+                  <span class="pin-label">Zè (Production)</span>
                 </div>
-                <div class="pin pin-end">
-                  <span class="pin-label">Cotonou (Client)</span>
+                
+                <div class="pin pin-sm" style="top: 20%; left: 45%;">
+                  <span class="pin-label-sm">Parakou</span>
+                </div>
+                <div class="pin pin-sm" style="top: 5%; left: 65%;">
+                  <span class="pin-label-sm">Niamey (NE)</span>
+                </div>
+                <div class="pin pin-sm" style="top: 75%; left: 7.5%;">
+                  <span class="pin-label-sm">Lomé (TG)</span>
+                </div>
+                <div class="pin pin-sm" style="top: 85%; left: 85%;">
+                  <span class="pin-label-sm">Lagos (NG)</span>
+                </div>
+
+                <div class="pin pin-end" style="top: 45%; left: 70%;">
+                  <span class="pin-label pin-active">Cotonou (Client)</span>
                   <div class="pulse-green pin-pulse"></div>
                 </div>
 
+                <!-- Animated Vehicle -->
                 <div class="vehicle-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="1" y="3" width="15" height="13"></rect>
