@@ -394,7 +394,7 @@
           </div>
           <div class="delivery-visual-container">
             <div class="glow-bg" style="background: var(--accent);"></div>
-            
+
             <div class="tracker-ui-glass">
               <!-- Top Header of the Glass Card -->
               <div class="tracker-header">
@@ -405,17 +405,22 @@
               <!-- Map Area -->
               <div class="tracker-map-area">
                 <div class="map-pattern"></div>
-                
+
                 <svg class="route-svg" viewBox="0 0 200 100" preserveAspectRatio="none">
                   <!-- Secondary Routes -->
-                  <path class="route-path-secondary" d="M 40,60 Q 60,40 90,25" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-dasharray="0, 10" stroke-linecap="round" opacity="0.6" />
-                  <path class="route-path-secondary" d="M 90,25 Q 110,15 130,10" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-dasharray="0, 10" stroke-linecap="round" opacity="0.6" />
-                  <path class="route-path-secondary" d="M 40,60 Q 25,65 15,70" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-dasharray="0, 10" stroke-linecap="round" opacity="0.6" />
-                  <path class="route-path-secondary" d="M 40,60 Q 100,80 170,80" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-dasharray="0, 10" stroke-linecap="round" opacity="0.6" />
+                  <path class="route-path-secondary" d="M 40,60 Q 60,40 90,25" fill="none" stroke="#9ca3af"
+                    stroke-width="2.5" stroke-dasharray="0, 10" stroke-linecap="round" opacity="0.6" />
+                  <path class="route-path-secondary" d="M 90,25 Q 110,15 130,10" fill="none" stroke="#9ca3af"
+                    stroke-width="2.5" stroke-dasharray="0, 10" stroke-linecap="round" opacity="0.6" />
+                  <path class="route-path-secondary" d="M 40,60 Q 25,65 15,70" fill="none" stroke="#9ca3af"
+                    stroke-width="2.5" stroke-dasharray="0, 10" stroke-linecap="round" opacity="0.6" />
+                  <path class="route-path-secondary" d="M 40,60 Q 100,80 170,80" fill="none" stroke="#9ca3af"
+                    stroke-width="2.5" stroke-dasharray="0, 10" stroke-linecap="round" opacity="0.6" />
 
                   <!-- Main Active Route to Cotonou -->
-                  <path class="route-path" d="M 40,60 Q 90,40 140,50" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="0, 10" stroke-linecap="round" />
-                  
+                  <path class="route-path" d="M 40,60 Q 90,40 140,50" fill="none" stroke="var(--accent)"
+                    stroke-width="2.5" stroke-dasharray="0, 10" stroke-linecap="round" />
+
                   <!-- City Dots -->
                   <circle cx="40" cy="60" r="5" fill="var(--primary)" /> <!-- Zè -->
                   <circle cx="90" cy="25" r="3" fill="var(--text-muted)" /> <!-- Parakou -->
@@ -429,7 +434,7 @@
                 <div class="pin pin-start" style="top: 55%; left: 20%;">
                   <span class="pin-label">Zè (Production)</span>
                 </div>
-                
+
                 <div class="pin pin-sm" style="top: 20%; left: 45%;">
                   <span class="pin-label-sm">Parakou</span>
                 </div>
@@ -450,32 +455,52 @@
 
                 <!-- Animated Vehicles -->
                 <div class="vehicle-icon vehicle-cotonou">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
                   </svg>
                 </div>
                 <div class="vehicle-icon vehicle-parakou vehicle-sm">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
                   </svg>
                 </div>
                 <div class="vehicle-icon vehicle-niamey vehicle-sm">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
                   </svg>
                 </div>
                 <div class="vehicle-icon vehicle-lome vehicle-sm">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
                   </svg>
                 </div>
                 <div class="vehicle-icon vehicle-lagos vehicle-sm">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
                   </svg>
                 </div>
               </div>
-              
+
               <!-- Integrated Status Card -->
               <div class="tracker-status-bar">
                 <div class="delivery-status-header">
@@ -751,7 +776,7 @@
 
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p>&copy; 2026 ReTAB & Bravo Jaram. Tous droits réservés.</p>
+        <p>&copy; 2026 ReTAB & Bravo Jaram/Nasrallah Ségnon GOHOUNGO-Tous droits réservés.</p>
         <div class="footer-bottom-links">
           <a href="#">Mentions Légales</a>
           <a href="#">Confidentialité</a>
