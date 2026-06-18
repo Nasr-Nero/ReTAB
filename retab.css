@@ -1358,13 +1358,48 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: driveVehicle 10s ease-in-out infinite alternate;
 }
 
-@keyframes driveVehicle {
+.vehicle-sm {
+  padding: 5px;
+  border: 1.5px solid #9ca3af;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-sm);
+  z-index: 1;
+}
+
+.vehicle-cotonou { animation: driveCotonou 10s ease-in-out infinite alternate; z-index: 2; }
+.vehicle-parakou { animation: driveParakou 8s ease-in-out infinite alternate; }
+.vehicle-niamey { animation: driveNiamey 12s ease-in-out infinite alternate; }
+.vehicle-lome { animation: driveLome 6s ease-in-out infinite alternate; }
+.vehicle-lagos { animation: driveLagos 11s ease-in-out infinite alternate; }
+
+@keyframes driveCotonou {
   0% { top: 60%; left: 20%; transform: translate(-50%, -50%) rotate(5deg); }
   50% { top: 40%; left: 45%; transform: translate(-50%, -50%) rotate(0deg); }
   100% { top: 50%; left: 70%; transform: translate(-50%, -50%) rotate(10deg); }
+}
+
+@keyframes driveParakou {
+  0% { top: 60%; left: 20%; transform: translate(-50%, -50%) rotate(-15deg); }
+  100% { top: 25%; left: 45%; transform: translate(-50%, -50%) rotate(-30deg); }
+}
+
+@keyframes driveNiamey {
+  0% { top: 60%; left: 20%; transform: translate(-50%, -50%) rotate(-15deg); }
+  50% { top: 25%; left: 45%; transform: translate(-50%, -50%) rotate(-25deg); }
+  100% { top: 10%; left: 65%; transform: translate(-50%, -50%) rotate(-10deg); }
+}
+
+@keyframes driveLome {
+  0% { top: 60%; left: 20%; transform: translate(-50%, -50%) rotate(150deg); }
+  100% { top: 70%; left: 10%; transform: translate(-50%, -50%) rotate(160deg); }
+}
+
+@keyframes driveLagos {
+  0% { top: 60%; left: 20%; transform: translate(-50%, -50%) rotate(15deg); }
+  50% { top: 75%; left: 50%; transform: translate(-50%, -50%) rotate(5deg); }
+  100% { top: 80%; left: 85%; transform: translate(-50%, -50%) rotate(0deg); }
 }
 
 .tracker-status-bar {
