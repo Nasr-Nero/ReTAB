@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commander | Bravo Jaram — ReTAB</title>
+  <meta name="description" content="Commandez ou réservez votre jus Bravo Jaram 100% naturel du Bénin. Remplissez le formulaire et nous vous contactons rapidement.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #0D2B0D;
+      --green-mid:   #1A4D1A;
+      --accent:      #F97316;
+      --accent-glow: rgba(249, 115, 22, 0.3);
+      --lime:        #a3e635;
+      --white:       #ffffff;
+      --bg:          #0a0f0a;
+      --card:        rgba(255,255,255,0.04);
+      --border:      rgba(255,255,255,0.10);
+      --text:        #f1f5f0;
+      --text-muted:  rgba(241,245,240,0.55);
+      --radius:      16px;
+      --radius-sm:   10px;
+      --radius-full: 999px;
+      --transition:  all 0.25s cubic-bezier(0.4,0,0.2,1);
+      --spring:      all 0.45s cubic-bezier(0.175,0.885,0.32,1.275);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Noise texture */
+    body::after {
+      content: "";
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Gradient BG orbs */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .bg-orb-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%);
+      top: -150px; right: -150px;
+    }
+    .bg-orb-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(163,230,53,0.08) 0%, transparent 70%);
+      bottom: -100px; left: -100px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      z-index: 10;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,15,10,0.6);
+      backdrop-filter: blur(20px);
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo-circle {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--accent);
+      flex-shrink: 0;
+    }
+    .logo-circle img {
+      width: 140%; height: 140%;
+      object-fit: cover;
+      object-position: center 5%;
+      margin: -20% 0 0 -20%;
+    }
+
+    .logo-text-wrap { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-name { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--white); }
+    .logo-sub  { font-size: 10px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .back-btn {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .back-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px 64px;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 560px;
+      animation: fadeUp 0.6s cubic-bezier(0.4,0,0.2,1) both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .page-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(249,115,22,0.12);
+      border: 1px solid rgba(249,115,22,0.25);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      margin-bottom: 20px;
+    }
+
+    .page-badge span { font-size: 14px; }
+
+    .page-title {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .page-title .orange { color: var(--accent); }
+
+    .page-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+    }
+
+    .form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* ── FIELD ── */
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      animation: fadeUp 0.5s both;
+    }
+    .field:nth-child(1) { animation-delay: 0.05s; }
+    .field:nth-child(2) { animation-delay: 0.10s; }
+    .field:nth-child(3) { animation-delay: 0.15s; }
+    .field:nth-child(4) { animation-delay: 0.20s; }
+    .field:nth-child(5) { animation-delay: 0.25s; }
+
+    label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    label .req {
+      color: var(--accent);
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      outline: none;
+      transition: var(--transition);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="tel"]::placeholder {
+      color: rgba(241,245,240,0.25);
+    }
+
+    input[type="text"]:focus,
+    input[type="tel"]:focus,
+    select:focus {
+      border-color: var(--accent);
+      background: rgba(249,115,22,0.05);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    /* Select custom arrow */
+    .select-wrap {
+      position: relative;
+    }
+    .select-wrap::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px; height: 6px;
+      background: var(--text-muted);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      pointer-events: none;
+      transition: var(--transition);
+    }
+    .select-wrap:focus-within::after {
+      background: var(--accent);
+    }
+
+    select option {
+      background: #1a2a1a;
+      color: var(--text);
+    }
+
+    /* ── SEXE TOGGLE ── */
+    .toggle-group {
+      display: flex;
+      gap: 12px;
+    }
+
+    .toggle-option {
+      flex: 1;
+      position: relative;
+    }
+
+    .toggle-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0; height: 0;
+    }
+
+    .toggle-option label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 16px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: none;
+      letter-spacing: 0;
+      transition: var(--spring);
+      user-select: none;
+    }
+
+    .toggle-option input:checked + label {
+      border-color: var(--accent);
+      background: rgba(249,115,22,0.12);
+      color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+      transform: scale(1.02);
+    }
+
+    .toggle-option label:hover {
+      border-color: rgba(249,115,22,0.4);
+      color: var(--text);
+    }
+
+    /* ── MAINTENANT : Commander / Réserver ── */
+    .action-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .action-option {
+      position: relative;
+    }
+
+    .action-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0; height: 0;
+    }
+
+    .action-option label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 20px 16px;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      cursor: pointer;
+      transition: var(--spring);
+      text-transform: none;
+      letter-spacing: 0;
+      user-select: none;
+    }
+
+    .action-option label .action-icon {
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .action-option label .action-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .action-option label .action-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .action-option input:checked + label {
+      border-color: var(--accent);
+      background: rgba(249,115,22,0.10);
+      box-shadow: 0 0 0 3px var(--accent-glow), 0 8px 32px rgba(249,115,22,0.15);
+      transform: translateY(-3px);
+    }
+
+    .action-option input:checked + label .action-title {
+      color: var(--accent);
+    }
+
+    .action-option label:hover {
+      border-color: rgba(249,115,22,0.35);
+      transform: translateY(-2px);
+    }
+
+    /* ── SUBMIT ── */
+    .submit-btn {
+      width: 100%;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--accent), #ea6f0a);
+      border: none;
+      border-radius: var(--radius-full);
+      color: white;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 8px 30px rgba(249,115,22,0.4);
+      transition: var(--spring);
+      position: relative;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .submit-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .submit-btn:hover {
+      transform: scale(1.02) translateY(-2px);
+      box-shadow: 0 12px 40px rgba(249,115,22,0.55);
+    }
+
+    .submit-btn:hover::before { opacity: 1; }
+    .submit-btn:active { transform: scale(0.98); }
+
+    /* ── DIVIDER ── */
+    .form-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 4px 0;
+    }
+
+    /* ── PRIVACY NOTE ── */
+    .privacy-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* ── SUCCESS MESSAGE (hidden by default) ── */
+    .success-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,15,10,0.92);
+      backdrop-filter: blur(16px);
+      z-index: 100;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px;
+      animation: fadeIn 0.4s both;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .success-overlay.show { display: flex; }
+
+    .success-icon {
+      font-size: 72px;
+      margin-bottom: 24px;
+      animation: bounceIn 0.6s 0.2s both;
+    }
+
+    @keyframes bounceIn {
+      0%   { transform: scale(0.3); opacity: 0; }
+      60%  { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .success-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .success-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 380px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .success-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: var(--spring);
+    }
+
+    .success-back:hover { transform: scale(1.04); box-shadow: 0 8px 24px var(--accent-glow); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .form-card { padding: 28px 20px; }
+      main { padding: 32px 16px 48px; }
+      header { padding: 16px 20px; }
+      .page-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background orbs -->
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <a href="index.html" class="logo-link">
+      <div class="logo-circle">
+        <img src="WhatsApp Image 2026-06-04 at 10.16.24.jpeg" alt="Logo ReTAB">
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-name">ReTAB</span>
+        <span class="logo-sub">Bravo Jaram</span>
+      </div>
+    </a>
+    <a href="index.html" class="back-btn">
+      ← Retour au site
+    </a>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main>
+    <div class="form-container">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="page-badge">
+          <span>🍍</span> Bravo Jaram
+        </div>
+        <h1 class="page-title">
+          Passez votre<br>
+          <span class="orange">commande</span> ici
+        </h1>
+        <p class="page-sub">Remplissez le formulaire ci-dessous.<br>Nous vous contactons via WhatsApp dans les plus brefs délais.</p>
+      </div>
+
+      <!-- Form Card -->
+      <div class="form-card">
+        <form id="orderForm" novalidate>
+
+          <div class="form-grid">
+
+            <!-- Nom & Prénoms -->
+            <div class="field">
+              <label for="nom">Nom &amp; Prénoms <span class="req">*</span></label>
+              <input
+                type="text"
+                id="nom"
+                name="nom_prenoms"
+                placeholder="Ex : Adjoua Marie Konaté"
+                required
+                autocomplete="name"
+              >
+            </div>
+
+            <!-- Numéro WhatsApp -->
+            <div class="field">
+              <label for="whatsapp">Numéro WhatsApp <span class="req">*</span></label>
+              <input
+                type="tel"
+                id="whatsapp"
+                name="numero_whatsapp"
+                placeholder="Ex : +229 97 00 00 00"
+                required
+                autocomplete="tel"
+              >
+            </div>
+
+            <!-- Sexe -->
+            <div class="field">
+              <label>Sexe <span class="req">*</span></label>
+              <div class="toggle-group" role="radiogroup" aria-label="Sexe">
+                <div class="toggle-option">
+                  <input type="radio" id="homme" name="sexe" value="Homme" required>
+                  <label for="homme">👨 Homme</label>
+                </div>
+                <div class="toggle-option">
+                  <input type="radio" id="femme" name="sexe" value="Femme">
+                  <label for="femme">👩 Femme</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Nationalité -->
+            <div class="field">
+              <label for="nationalite">Nationalité <span class="req">*</span></label>
+              <div class="select-wrap">
+                <select id="nationalite" name="nationalite" required>
+                  <option value="" disabled selected>Sélectionnez votre nationalité</option>
+                  <option value="Béninoise">🇧🇯 Béninoise</option>
+                  <option value="Congolaise">🇨🇬 Congolaise</option>
+                  <option value="Ivoirienne">🇨🇮 Ivoirienne</option>
+                  <option value="Nigérienne">🇳🇪 Nigérienne</option>
+                  <option value="Nigériane">🇳🇬 Nigériane</option>
+                  <option value="Burkinabé">🇧🇫 Burkinabé</option>
+                  <option value="Ghanéenne">🇬🇭 Ghanéenne</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-divider"></div>
+
+            <!-- Maintenant : Commander / Réserver -->
+            <div class="field">
+              <label>Je veux <span class="req">*</span></label>
+              <div class="action-group" role="radiogroup" aria-label="Action souhaitée">
+                <div class="action-option">
+                  <input type="radio" id="commander" name="action" value="Commander" required>
+                  <label for="commander">
+                    <span class="action-icon">🛒</span>
+                    <span class="action-title">Commander</span>
+                    <span class="action-desc">Recevoir ma commande maintenant</span>
+                  </label>
+                </div>
+                <div class="action-option">
+                  <input type="radio" id="reserver" name="action" value="Réserver">
+                  <label for="reserver">
+                    <span class="action-icon">📅</span>
+                    <span class="action-title">Réserver</span>
+                    <span class="action-desc">Réserver pour une date ultérieure</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+              Envoyer ma demande
+            </button>
+
+          </div>
+        </form>
+      </div>
+
+      <!-- Privacy note -->
+      <p class="privacy-note">
+        🔒 Vos informations sont confidentielles et ne seront utilisées que pour votre commande.
+      </p>
+
+    </div>
+  </main>
+
+  <!-- Success Overlay -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-icon">🎉</div>
+    <h2 class="success-title">Demande envoyée !</h2>
+    <p class="success-sub">Merci pour votre intérêt pour <strong>Bravo Jaram</strong>.<br>Notre équipe vous contactera très bientôt via WhatsApp.</p>
+    <a href="index.html" class="success-back">← Retour au site</a>
+  </div>
+
+  <script>
+    // ── Stagger field animations on load
+    document.querySelectorAll('.field').forEach((f, i) => {
+      f.style.animationDelay = (i * 0.07) + 's';
+    });
+
+    // ── CONFIGURATION WEB3FORMS
+    // Obtenez votre clé GRATUITE sur https://web3forms.com
+    // en entrant l'email : nasrallahgohoungo@gmail.com
+    const WEB3FORMS_KEY = '903e304c-72f6-47ca-9ec4-9ea1552f4fe0';
+
+    // ── Form submission via Web3Forms API (fonctionne en local ET en ligne)
+    document.getElementById('orderForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Collect values
+      const nom         = document.getElementById('nom').value.trim();
+      const whatsapp    = document.getElementById('whatsapp').value.trim();
+      const sexeEl      = document.querySelector('input[name="sexe"]:checked');
+      const nationalite = document.getElementById('nationalite').value;
+      const actionEl    = document.querySelector('input[name="action"]:checked');
+
+      // Validation basique
+      if (!nom || !whatsapp || !sexeEl || !nationalite || !actionEl) {
+        showFormError('⚠️ Veuillez remplir tous les champs obligatoires.');
+        shakeForm();
+        return;
+      }
+
+      // Validation stricte Numéro WhatsApp
+      // Autorise le '+', les chiffres, les espaces, et entre 8 et 20 caractères
+      const whatsappRegex = /^\+?[0-9\s]{8,20}$/;
+      if (!whatsappRegex.test(whatsapp)) {
+        showFormError('⚠️ Numéro WhatsApp invalide. Veuillez n\'utiliser que des chiffres (ex: +229 97 00 00 00).');
+        shakeForm();
+        return;
+      }
+
+      // UI : loading state
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+        style="animation:spin 1s linear infinite">
+        <path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Envoi en cours…`;
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key:           WEB3FORMS_KEY,
+            subject:              '🍍 Nouvelle demande Bravo Jaram — ' + actionEl.value,
+            from_name:            'Site ReTAB',
+            'Nom & Prénoms':      nom,
+            'Numéro WhatsApp':    whatsapp,
+            'Sexe':               sexeEl.value,
+            'Nationalité':        nationalite,
+            'Action souhaitée':   actionEl.value,
+            botcheck: ''
+          })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          document.getElementById('orderForm').reset();
+          document.getElementById('successOverlay').classList.add('show');
+        } else {
+          throw new Error(data.message || 'Erreur serveur');
+        }
+
+      } catch (err) {
+        if (WEB3FORMS_KEY === 'VOTRE_CLE_WEB3FORMS_ICI') {
+          showFormError('🔑 Clé API manquante — Allez sur web3forms.com, entrez nasrallahgohoungo@gmail.com, copiez la clé et remplacez VOTRE_CLE_WEB3FORMS_ICI dans commander.html');
+        } else {
+          showFormError('❌ Erreur lors de l\'envoi. Vérifiez votre connexion internet et réessayez.');
+        }
+        btn.disabled = false;
+        btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Envoyer ma demande`;
+      }
+    });
+
+    function showFormError(msg) {
+      let el = document.getElementById('formError');
+      if (!el) {
+        el = document.createElement('div');
+        el.id = 'formError';
+        el.style.cssText = 'background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#fca5a5;padding:14px 18px;border-radius:12px;font-size:13px;font-weight:600;line-height:1.6;margin-top:8px;';
+        document.getElementById('submitBtn').after(el);
+      }
+      el.textContent = msg;
+    }
+
+    function shakeForm() {
+      const card = document.querySelector('.form-card');
+      card.style.animation = 'shake 0.4s ease';
+      setTimeout(() => card.style.animation = '', 400);
+    }
+  </script>
+
+  <style>
+    @keyframes spin  { to { transform: rotate(360deg); } }
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      20%,60% { transform: translateX(-6px); }
+      40%,80% { transform: translateX(6px); }
+    }
+  </style>
+
+</body>
+</html>
+
